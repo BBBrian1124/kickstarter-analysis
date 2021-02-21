@@ -1,6 +1,8 @@
 # An Analysis of Kickstarter Campaigns
   * performing analysis on kickstarter data to uncover trends 
   * UofT Data Analytics Course - Module 1
+## Findings
+ * Testing here is where findings would go 
 ## Relevant Files
 ### This chart shows the break outcome of crowd funding campaigns in the US
   * https://github.com/BBBrian1124/kickstarter-analysis/blob/main/U.S_Outcomes_by_Category.png
