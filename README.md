@@ -1,12 +1,48 @@
-# An Analysis of Kickstarter Campaigns
-  * performing analysis on kickstarter data to uncover trends 
-  * UofT Data Analytics Course - Module 1
-## Findings
- * Testing here is where findings would go 
-## Relevant Files
-### This chart shows the break outcome of crowd funding campaigns in the US
-  * https://github.com/BBBrian1124/kickstarter-analysis/blob/main/U.S_Outcomes_by_Category.png
-### This chart shows the outcomes of crowd funding campaigns by creation date
-  * https://github.com/BBBrian1124/kickstarter-analysis/blob/main/Outcomes_by_Creation_Date.png
-### This Excel document has various analysis on crowd funding data
-  * https://github.com/BBBrian1124/kickstarter-analysis/blob/main/data-1-1-3-StarterBook.xlsx
+# Kickstarting with Excel
+## Overview of Project
+* The ‘Kickstarter’ dataset contains a list of fundraiser campaigns and information regarding the campaign such as their funding goals, number of donors, category and more. The client’s (Louise) play “Fever” (which is in the “theater” parent category and “plays” subcategory) has come close to its fundraising goal. Louise is curious how other campaigns fared in relation to their launch dates and their funding goals. Using the ‘Kickstarter’ dataset, we will analyze campaign outcomes based on launch date and funding goals to assess how other campaigns performed. 
+### Purpose
+* We will complete analysis of the campaign’s outcomes based on the launch date and based on funding goals to assess whether those factors have an impact on the outcome of the campaign (which can be successful/failed/cancelled or live).
+---
+## Analysis and Challenges
+### Analysis of Outcomes Based on Launch Date
+! [Theater_Outcomes_vs_Launch] (https://github.com/BBBrian1124/kickstarter-analysis/blob/main/Resources/Theater_Outcomes_vs_Launch.png)
+* From the ‘Kickstarter data’ a pivot table was created to view the outcome of fund raising campaigns in the “theater” category by launch date. A pivot chart was created from the pivot table to visualize this. From the pivot table and chart, we can observe that the months May and June are “peak months” as they have the highest quantity of successful launches. This would suggest that these are good months to launch campaigns, however, if we look at the average per month for successful, failed and canceled campaigns month to month, the averages are 62% successful, 36% failed, and 3% canceled. In other words, on average, 62% of campaigns are successful, 36% fail, and 3% are canceled. 
+
+! [% Breakdown of Outcomes] (https://github.com/BBBrian1124/kickstarter-analysis/blob/main/Resources/%25%20Breakdown%20of%20Outcomes.png)
+* If we look at the percentage breakdown in those “peak months” (May and June) the percentages in those months are about the same (i.e. 67% of campaigns are successful in May and 65% in June) as the average. The standard deviation is 3% so in comparing the percentage breakdown in those “peak months” versus the average, it does not deviate much from the average. This suggests that despite those months having a higher number of successful campaigns, percentage wise it is similar, suggesting the months (launch date) don’t necessarily impact the outcome.  
+
+! [Campaign Outcomes Year Over Year] (https://github.com/BBBrian1124/kickstarter-analysis/blob/main/Resources/Campaign%20Outcomes%20Year%20Over%20Year.png)
+* Further, if we look at a year to year trend of the # of “theater” campaigns, we can see that this peaked in 2014 to 2016 and had a huge drop off in the most recent year we have data for (2017). From 2015 to 2016, there was a 25% decrease in the number of theater campaigns, and from 2016 to 2017 a 92% decrease in theater campaigns. If we assume that the number of campaigns run has some relation to the market demand of a play in this category, then this may be of concern as it suggests that the demand of plays in the ‘theater’ category is rapidly decreasing. 
+### Analysis of Outcomes Based on Goals
+! [Outcomes_vs_Goals] (https://github.com/BBBrian1124/kickstarter-analysis/blob/main/Resources/Outcomes_vs_Goals.png)
+* From the ‘Kickstarter data’, Excel formulas were used to count the number of successful, failed, and canceled campaigns (categorized as ‘plays’) based on a various specified ranges. A line chart was then created to visualize this. If we look at the line chart, we can see that the line for the percentage successful compared to the line for the percentage failed are essentially inversed of one another. This is because there are no ‘plays’ campaigns cancelled therefore, there are only 2 outcomes, “successful” or “failed”. This may tell us something if the trend was linear, however the trend is only partly linear from the $0 to $29999 goal range. From this range we can see that on the lower end (i.e. goal of less than $1000) 76% of campaigns (at that range) are successful, then as the goal range increases, the success rate drops. This suggests that the larger the campaign goal, the less likely for success, however, the chart is not entirely linear as there is a spike in success rate after the $29999 mark followed by a drop therefore we cannot conclude this entirely.
+! [% of Successful Campaigns by Range] (https://github.com/BBBrian1124/kickstarter-analysis/blob/main/Resources/%25%20of%20Successful%20Campaigns%20by%20Range.png)
+* Further, if we look at the percentage of successful campaigns relative to their goal, we see that 76% of successful campaigns have a goal under $5000, and 89% have a goal under $10000. Therefore, we can say that majority of the successful campaigns are under these ranges. We can also see that campaigns with a goal under $5000 have roughly a 3:1 ratio when comparing ‘successful’ to ‘failed’ campaigns, which suggests that campaigns under/within this goal range are more than likely to be successful. 
+### Challenges and Difficulties Encountered
+* Personally I did not face any challenges but challenges may have arose from the analysis of “Outcome based on Goals”. A ‘countifs’ formula can be used, however, there may be difficulty/inefficiencies if users had tried to type a formula for each goal range and outcome (36 formulas), rather than building a formula based on cell reference (1 formula).This can be overcome since we are looking for the same information, outcomes by goal range. If we setup a table that specifies the lower and upper number for each range, we can use Excel’s absolute cell referencing to always look to those values as the conditions. The same can be done for each of the outcomes. 
+---
+## Results
+**What are two conclusions you can draw about the Outcomes based on Launch Date?**
+* One conclusion that can be drawn is that the launch date (specifically the month) does not have much of an impact on the outcome of the campaign. Looking at the percentage breakdown of the campaign outcomes, we observe that on average 62% are successful, 36% failed, and 3% canceled. Month over month, the percentage breakdown in each month is similar to this, which suggests that the outcomes don’t vary much depending on launch date, or that the launch month has little impact on the outcome. Secondary, when looking at the number of ‘theater’ campaigns year to year we see a decrease in the number of ‘theater’ campaigns ran. If we assume that the number of campaigns has some relation to the market demand, we may conclude that there is not a market demand for the ‘theater’ category. In other words, now may not be a good time to launch such a campaign as there was a 92% decrease in the number of campaigns ran last year.
+
+**What can you conclude about the Outcomes based on Goals**
+* We can conclude that generally speaking, the lower the goal, the more likely that the campaign will succeed. More specifically, 76% of all successful campaigns have a goal under $5000 and 90% under $10000. In other words, majority of the successful campaigns have a goal under $5000. Further, campaigns with a goal under $5000 have a 3:1 ratio, or are 3 times more likely to be successful than failing. Therefore, we can conclude that having a goal of under $5000 means the campaign is likely to be successful, therefore this should be the budget/goal.
+
+**What are some limitations of this dataset?**
+* Some of the limitations of this data set is that we lack information surrounding the donations. 
+* For example, it is unclear whether the number of donors mean the number of donations (i.e. quantity), or number of donors (i.e. unique people). The two can have different implications – a larger quantity of donations may suggest more interest vs. the number of donors which can indicate whether there is a large interest, or whether it is a passionate few.
+* Donation dates would also be helpful to gage when donations are usually made, simply looking at when the campaign starts doesn’t indicate to us when the donations have started (i.e. it may take time for the public to even become aware of the campaign and to start donating).
+* Donor demographics would also be useful as factors such as age, ethnicity, gender, etc. can impact the success of the campaign. This can tell us each campaign category’s target audience, and whether Louise is in an area with the “right” demographics.
+* Country is also a large demographic to look at, as regions (i.e. states, cities, etc.) within countries may have different outcomes/interest in the campaign. An assessment based on country may be too generic.
+
+**What are some other possible tables and/or graphs that we could create?**
+* Other graphs that could be created are as follows:
+* Outcome based on goal by country: to evaluate other factors that may differ amongst countries. This can also tell us further demographic info about our target audience - i.e. economic trends - if a certain country’s economy is doing well there may be a tendency to donate more as opposed to one that is not.
+* Comparison of outcomes of all campaigns by launch date: to further evaluate how the “theater” category compares amongst the “market” (other campaigns) - i.e. to see if the outcomes of the “theater” campaigns are similar to the outcomes of “campaigns” in general to see whether certain periods are just a bad time for fundraisers in general
+* Outcome by campaign length - i.e. this can tell us the “pace” or a timeline as to when we can expect certain outcomes, perhaps those who wait longer are more likely to be successful 
+* Outcomes by number of donors and averages donations - i.e. more donors over a longer time may suggest that it is slowly funded vs. few and large which can be an indicator of market demand/interest 
+---
+### Appendix
+[Raw Excel File] (https://github.com/BBBrian1124/kickstarter-analysis/blob/main/Kickstarter_Challenge.xlsx)
+* Raw Excel file containing raw dataset, analysis, and charts 
